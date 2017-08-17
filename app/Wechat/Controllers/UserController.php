@@ -8,26 +8,33 @@ class UserController extends Controller
 {
     public $wechat;
 
-    /**
-     * UserController constructor.
-     * @param $wechat
-     * 自动容器注入微信控制类
-     */
+    //自动容器注入微信控制类
     public function __construct(Application $wechat)
     {
         $this->wechat = $wechat;
     }
 
-
     //获取关注当前微信公众号的所有用户
     public function index()
     {
-        return $this->wechat->user->lists("obnyc1PvGeDLP_oe3a4lp6RCB9Bc");
+        return $this->wechat->user->lists();
     }
 
     //根据OpenID获取用户的信息,从微信送过来的用户的资料
     public function show($openId)
     {
         return $this->wechat->user->get($openId);
+    }
+
+    //为指定用户修改备注
+    public function remark()
+    {
+        $this->validate(request(), [
+            'openId' => 'required',
+            'remark' => 'required'
+        ]);
+        $openId = request('openId');
+        $remark = request('remark');
+        return $this->wechat->user->remark($openId, $remark);
     }
 }
