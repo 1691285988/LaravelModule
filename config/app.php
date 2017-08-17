@@ -237,6 +237,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        //添加EasyWechat
+        'EasyWeChat' => Overtrue\LaravelWechat\Facade::class,
     ],
 
 ];
