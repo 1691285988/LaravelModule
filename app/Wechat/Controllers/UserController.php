@@ -29,10 +29,9 @@ class UserController extends Controller
     //为指定用户修改备注
     public function remark($openId)
     {
-        $this->validate(request(), [
-            'remark' => 'required'
-        ]);
-        $remark = request('remark');
-        return $this->wechat->user->remark($openId, $remark);
+        if(!empty(request('remark'))){
+            $remark = request('remark');
+            return $this->wechat->user->remark($openId, $remark);
+        }
     }
 }
