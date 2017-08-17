@@ -87,6 +87,5 @@ Route::group(['middleware' => 'auth'], function () {
 });
 /*************************** 默认模块,登陆后访问的模块 *****************************/
 
-Route::any('/wechat', 'WechatController@serve');
-
 include_once('admin.php');
+include_once('wechat.php');
