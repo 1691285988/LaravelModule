@@ -25,7 +25,7 @@ class UserController extends Controller
         return $this->wechat->user->lists();
     }
 
-    //根据OpenID获取用户的信息
+    //根据OpenID获取用户的信息,从微信送过来的用户的资料
     public function show($openId)
     {
         return $this->wechat->user->get($openId);
