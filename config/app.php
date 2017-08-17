@@ -185,6 +185,9 @@ return [
 
         //debugbar
         Barryvdh\Debugbar\ServiceProvider::class,
+
+        //over-true easywechat
+        Overtrue\LaravelWechat\ServiceProvider::class,
     ],
 
     /*
