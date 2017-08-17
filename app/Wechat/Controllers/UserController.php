@@ -22,7 +22,7 @@ class UserController extends Controller
     //获取关注当前微信公众号的所有用户
     public function index()
     {
-        return $this->wechat->user->lists("obnyc1AJGNNJldnJwWWtPpZg3P7M");
+        return $this->wechat->user->lists("obnyc1PvGeDLP_oe3a4lp6RCB9Bc");
     }
 
     //根据OpenID获取用户的信息,从微信送过来的用户的资料
