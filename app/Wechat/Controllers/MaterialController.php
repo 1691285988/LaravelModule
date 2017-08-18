@@ -75,4 +75,17 @@ class MaterialController extends Controller
         $image = $this->material->uploadVideo('storage/' . $path);
         return $image;
     }
+
+    //获取全部资源
+    public function materials($type = 'image')
+    {
+        $meterials = $this->material->lists($type);
+        return $meterials;
+    }
+
+    //根资源ID获取内容
+    public function media($mediaId){
+        $media = $this->material->get($mediaId);
+        return $media;
+    }
 }
