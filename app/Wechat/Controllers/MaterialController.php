@@ -49,7 +49,8 @@ class MaterialController extends Controller
         $this->validate(request(), [
             'image' => 'image'
         ]);
-        $image = $this->material->uploadImage($request->file('image')->getRealPath());
+        $path = $request->file('image')->storePublicly(md5(time()));
+        $image = $this->material->uploadImage($path);
         return $image;
     }
 
