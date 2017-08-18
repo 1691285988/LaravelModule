@@ -29,7 +29,7 @@ class WechatController extends Controller
                         case 'unsubscribe':
                             return "退订了!";
                             break;
-                        case 'click':
+                        case 'CLICK':
                             switch ($message->EventKey) {
                                 case "V1001_TODAY_MUSIC":
                                     return "点击了今日歌曲";
