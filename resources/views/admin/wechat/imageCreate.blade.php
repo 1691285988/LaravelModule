@@ -17,6 +17,7 @@
                         <p class="help-block">图片限制: 2M，支持PNG\JPEG\JPG\GIF格式</p>
                     </div>
                 </div>
+                @include('admin.layout.error')
                 <!-- /.box-body -->
                 <div class="box-footer">
                     <button type="submit" class="btn btn-primary">提交</button>

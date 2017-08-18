@@ -55,14 +55,24 @@ class MaterialController extends Controller
     }
 
     //上交音频素材操作
-    public function audioCreate()
+    public function audioCreate(Request $request)
     {
-        dd(request()->all());
+        $this->validate(request(), [
+            'image' => 'image'
+        ]);
+        $path = $request->file('image')->storePublicly(md5(time()));
+        $image = $this->material->uploadImage('storage/' . $path);
+        return $image;
     }
 
     //上交视频素材操作
-    public function videoCreate()
+    public function videoCreate(Request $request)
     {
-        dd(request()->all());
+        $this->validate(request(), [
+            'image' => 'mimetypes:video/avi,video/mpeg,video/quicktime'
+        ]);
+        $path = $request->file('image')->storePublicly(md5(time()));
+        $image = $this->material->uploadImage('storage/' . $path);
+        return $image;
     }
 }
