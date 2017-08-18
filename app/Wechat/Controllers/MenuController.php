@@ -53,6 +53,7 @@ class MenuController extends Controller
     //展示菜单的json内容
     public function show()
     {
-        return $this->menu->current();
+        //return $this->menu->current();
+        return $this->menu->all();
     }
 }
