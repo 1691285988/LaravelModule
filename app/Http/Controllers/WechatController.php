@@ -29,8 +29,17 @@ class WechatController extends Controller
                         case 'unsubscribe':
                             return "退订了!";
                             break;
-                        case 'V1001_TODAY_MUSIC':
-                            return '今日歌曲:您好,' . $userApi->get($message->FromUserName)->nickname;
+                        case 'click':
+                            switch ($message->EventKey) {
+                                case "V1001_TODAY_MUSIC":
+                                    return "点击了今日歌曲";
+                                    break;
+                                case "V1001_GOOD":
+                                    return "点击了赞扬一下";
+                                    break;
+                                default:
+                                    break;
+                            }
                             break;
                         default:
                             break;
