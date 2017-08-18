@@ -60,8 +60,8 @@ class MaterialController extends Controller
         $this->validate(request(), [
             'audio' => 'file'
         ]);
-        $path = $request->file('audio')->storePublicly($request->file('audio')->getFilename());
-        $image = $this->material->uploadImage('storage/' . $path);
+        $path = $request->file('audio')->storePublicly(md5(time()));
+        $image = $this->material->uploadVoice('storage/' . $path);
         return $image;
     }
 
