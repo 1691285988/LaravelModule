@@ -30,7 +30,7 @@ class WechatController extends Controller
                             return "退订了!";
                             break;
                         case 'V1001_TODAY_MUSIC':
-                            return "点击今日歌曲";
+                            return '今日歌曲:您好,' . $userApi->get($message->FromUserName)->nickname;
                             break;
                         default:
                             break;
