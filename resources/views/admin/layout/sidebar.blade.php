@@ -38,17 +38,23 @@
                     </a>
                 </li>
             @endcan
-                <li class="treeview active">
-                    <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>微信管理</span>
-                        <span class="pull-right-container"></span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="/admin/permissions"><i class="fa fa-circle-o"></i>用户管理</a></li>
-                        <li><a href="/admin/users"><i class="fa fa-circle-o"></i>素材管理</a></li>
-                        <li><a href="/admin/roles"><i class="fa fa-circle-o"></i>角色管理</a></li>
-                    </ul>
-                </li>
+            {{--微信管理--}}
+            <li class="active treeview">
+                <a href="#">
+                    <i class="fa fa-share"></i> <span>微信管理</span>
+                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="active treeview"><a href="#">
+                            <i class="fa fa-circle-o"></i>素材管理<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                        <ul class="treeview-menu">
+                            <li><a href="/admin/wechat/material/image"><i class="fa fa-circle-o"></i>图片添加</a></li>
+                            <li><a href="/admin/wechat/material/audio"><i class="fa fa-circle-o"></i>音频添加</a></li>
+                            <li><a href="/admin/wechat/material/video"><i class="fa fa-circle-o"></i>视频添加</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </section>
     <!-- /.sidebar -->

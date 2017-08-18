@@ -28,19 +28,19 @@ class MaterialController extends Controller
     //创建图片素材页面
     public function image()
     {
-
+        return view("admin.wechat.imageCreate");
     }
 
     //创建音频素材页面
     public function audio()
     {
-
+        return view("admin.wechat.audioCreate");
     }
 
     //创建视频素材页面
     public function video()
     {
-
+        return view("admin.wechat.videoCreate");
     }
 
     //上交图片素材操作

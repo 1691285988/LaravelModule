@@ -54,5 +54,9 @@ Route::group(['prefix' => 'admin'], function () {
             Route::resource('notices', '\App\Admin\Controllers\NoticeController', ['only' => ['index', 'create', 'store', 'destroy']]);
         });
 
+        //微信管理--素材管理
+        Route::get("/wechat/material/image", '\App\Wechat\Controllers\MaterialController@image');
+        Route::get("/wechat/material/audio", '\App\Wechat\Controllers\MaterialController@audio');
+        Route::get("/wechat/material/video", '\App\Wechat\Controllers\MaterialController@video');
     });
 });
