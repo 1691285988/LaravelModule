@@ -16,4 +16,9 @@ Route::group(['prefix' => 'wechat'], function () {
     //群发消息
     Route::get('/broadcast/message','\App\Wechat\Controllers\BroadcastController@messages');
     Route::get('/broadcast/textMessages','\App\Wechat\Controllers\BroadcastController@textMessages');
+
+    //自定义菜单
+    Route::get('/menu/menus','\App\Wechat\Controllers\MenuController@menus');
+    Route::get('/menu/show','\App\Wechat\Controllers\MenuController@show');
+
 });
