@@ -22,6 +22,7 @@ class WechatController extends Controller
         $wechat->server->setMessageHandler(function ($message) use ($wechat, $userApi) {
             switch ($message->MsgType) {
                 case 'event':
+                    \Log::info('消息:', $message);
                     switch ($message->Event) {
                         case 'subscribe':
                             return "订阅成功!";
