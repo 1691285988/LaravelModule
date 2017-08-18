@@ -10,10 +10,10 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            <form action="/wechat/create/audio" method="post" role="form">
                 <div class="box-body">
                     <div class="form-group">
-                        <input type="file" id="exampleInputFile">
+                        <input name="file" type="file" id="exampleInputFile">
                         <p class="help-block">语音限制: 2M，播放长度不超过60s，支持AMR\MP3格式</p>
                     </div>
                 </div>

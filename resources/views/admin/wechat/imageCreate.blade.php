@@ -10,10 +10,10 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            <form action="/wechat/create/image" enctype="multipart/form-data" method="post" role="form">
                 <div class="box-body">
                     <div class="form-group">
-                        <input type="file" id="exampleInputFile">
+                        <input name="image" type="file" id="exampleInputFile">
                         <p class="help-block">图片限制: 2M，支持PNG\JPEG\JPG\GIF格式</p>
                     </div>
                 </div>

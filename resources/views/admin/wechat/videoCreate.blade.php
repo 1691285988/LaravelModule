@@ -10,10 +10,10 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            <form action="/wechat/create/video" method="post" role="form">
                 <div class="box-body">
                     <div class="form-group">
-                        <input type="file" id="exampleInputFile">
+                        <input name="file" type="file" id="exampleInputFile">
                         <p class="help-block">视频限制: 10MB，支持MP4格式</p>
                     </div>
                 </div>

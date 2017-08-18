@@ -44,20 +44,24 @@ class MaterialController extends Controller
     }
 
     //上交图片素材操作
-    public function imageCreate()
+    public function imageCreate(Request $request)
     {
-
+        $this->validate(request(), [
+            'image' => 'image'
+        ]);
+        $image = $this->material->uploadImage($request->file('image')->getRealPath());
+        return $image;
     }
 
     //上交音频素材操作
     public function audioCreate()
     {
-
+        dd(request()->all());
     }
 
     //上交视频素材操作
     public function videoCreate()
     {
-
+        dd(request()->all());
     }
 }
