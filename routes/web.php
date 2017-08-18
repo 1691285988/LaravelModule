@@ -26,6 +26,7 @@ Route::get('/login', '\App\Http\Controllers\LoginController@index');
 Route::post('/login', '\App\Http\Controllers\LoginController@login');
 /*************** 登录模块 *******************/
 
+Route::get('/home/phpinfo', '\App\Http\Controllers\HomeController@phpinfo');
 
 /*************************** 默认模块,登陆后访问的模块 *****************************/
 Route::group(['middleware' => 'auth'], function () {
