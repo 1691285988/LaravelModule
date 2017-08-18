@@ -58,7 +58,7 @@ class MaterialController extends Controller
     public function audioCreate(Request $request)
     {
         $this->validate(request(), [
-            'audio' => 'file|mimes:mp3'
+            'audio' => 'mimes:mp3'
         ]);
         $path = $request->file('audio')->storePublicly(md5(time()));
         $image = $this->material->uploadImage('storage/' . $path);
