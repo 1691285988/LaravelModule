@@ -29,6 +29,9 @@ class WechatController extends Controller
                         case 'unsubscribe':
                             return "退订了!";
                             break;
+                        case 'V1001_TODAY_MUSIC':
+                            return "点击今日歌曲";
+                            break;
                         default:
                             break;
                     }
