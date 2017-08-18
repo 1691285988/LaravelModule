@@ -22,7 +22,16 @@ class WechatController extends Controller
         $wechat->server->setMessageHandler(function ($message) use ($wechat, $userApi) {
             switch ($message->MsgType) {
                 case 'event':
-                    return '收到事件消息';
+                    switch ($message->Event) {
+                        case 'subscribe':
+                            return "订阅成功!";
+                            break;
+                        case 'unsubscribe':
+                            return "退订了!";
+                            break;
+                        default:
+                            break;
+                    }
                     break;
                 case 'text':
                     return '您好,' . $userApi->get($message->FromUserName)->nickname;
