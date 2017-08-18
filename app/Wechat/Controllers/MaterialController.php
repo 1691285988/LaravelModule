@@ -58,9 +58,9 @@ class MaterialController extends Controller
     public function audioCreate(Request $request)
     {
         $this->validate(request(), [
-            'image' => 'image'
+            'image' => 'file|mimes:mp3'
         ]);
-        $path = $request->file('image')->storePublicly(md5(time()));
+        $path = $request->file('audio')->storePublicly(md5(time()));
         $image = $this->material->uploadImage('storage/' . $path);
         return $image;
     }
@@ -69,10 +69,10 @@ class MaterialController extends Controller
     public function videoCreate(Request $request)
     {
         $this->validate(request(), [
-            'image' => 'mimetypes:video/avi,video/mpeg,video/quicktime'
+            'video' => 'mimetypes:video/avi,video/mpeg,video/quicktime'
         ]);
-        $path = $request->file('image')->storePublicly(md5(time()));
-        $image = $this->material->uploadImage('storage/' . $path);
+        $path = $request->file('video')->storePublicly(md5(time()));
+        $image = $this->material->uploadVideo('storage/' . $path);
         return $image;
     }
 }
