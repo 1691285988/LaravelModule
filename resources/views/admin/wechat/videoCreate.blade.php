@@ -10,7 +10,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form action="/wechat/create/video" method="post" role="form">
+            <form action="/wechat/create/video" enctype="multipart/form-data" method="post" role="form">
                 <div class="box-body">
                     <div class="form-group">
                         <input name="video" type="file" id="exampleInputFile">
