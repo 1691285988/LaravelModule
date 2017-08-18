@@ -60,9 +60,8 @@ class MaterialController extends Controller
         $this->validate(request(), [
             'audio' => 'file'
         ]);
-        $path = $request->file('audio')->storePublicly($request->file('audio')->getPathname());
-        $image = $this->material->uploadVoice('storage/' . $path);
-        return $image;
+        $path = $request->file('audio')->storePublicly(md5(time()));
+        return $this->material->uploadVoice('storage/' . $path);
     }
 
     //上交视频素材操作
@@ -72,8 +71,7 @@ class MaterialController extends Controller
             'video' => 'mimetypes:video/avi,video/mpeg,video/quicktime'
         ]);
         $path = $request->file('video')->storePublicly(md5(time()));
-        $image = $this->material->uploadVideo('storage/' . $path);
-        return $image;
+        return $this->material->uploadVideo('storage/' . $path);
     }
 
     //获取全部资源

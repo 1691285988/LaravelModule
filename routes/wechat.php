@@ -12,4 +12,8 @@ Route::group(['prefix' => 'wechat'], function () {
     Route::post("/create/image", "\App\Wechat\Controllers\MaterialController@imageCreate");
     Route::post("/create/audio", "\App\Wechat\Controllers\MaterialController@audioCreate");
     Route::post("/create/video", "\App\Wechat\Controllers\MaterialController@videoCreate");
+
+    //群发消息
+    Route::get('/broadcast/message','\App\Wechat\Controllers\BroadcastController@messages');
+    Route::get('/broadcast/textMessages','\App\Wechat\Controllers\BroadcastController@textMessages');
 });
