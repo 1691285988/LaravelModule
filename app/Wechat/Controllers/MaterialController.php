@@ -50,7 +50,7 @@ class MaterialController extends Controller
             'image' => 'image'
         ]);
         $path = $request->file('image')->storePublicly(md5(time()));
-        $image = $this->material->uploadImage($path);
+        $image = $this->material->uploadImage(asset('storage/' . $path));
         return $image;
     }
 
