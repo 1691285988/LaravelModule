@@ -17,6 +17,7 @@
                         <p class="help-block">语音限制: 2M，播放长度不超过60s，支持AMR\MP3格式</p>
                     </div>
                 </div>
+                @include('layout/errorMsg')
                 <!-- /.box-body -->
                 <div class="box-footer">
                     <button type="submit" class="btn btn-primary">提交</button>

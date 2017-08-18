@@ -17,6 +17,7 @@
                         <p class="help-block">视频限制: 10MB，支持MP4格式</p>
                     </div>
                 </div>
+                @include('layout/errorMsg')
                 <!-- /.box-body -->
                 <div class="box-footer">
                     <button type="submit" class="btn btn-primary">提交</button>
