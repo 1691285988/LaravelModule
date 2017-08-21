@@ -15,6 +15,10 @@
 Route::get('/', function () {return view('welcome');});
 /*************** 根目录模块 *******************/
 
+/*************** 页面属性测试模块 *******************/
+Route::get('/view-test/demo1', '\App\Http\Controllers\ViewTestController@demo1');
+/*************** 页面属性测试模块 *******************/
+
 /*************** 登录模块 *******************/
 //注册页面
 Route::get('/register', '\App\Http\Controllers\RegisterController@index');
