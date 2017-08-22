@@ -35,17 +35,18 @@
         </form>
         <br><br>
         @if(isset($orginal))
-        <h2>您查询的URL:
-            <a href="#" target="_blank">{{$orginal}}</a>
-        </h2>
+            <h2>您查询的URL:
+                <a href="{{$orginal}}" target="_blank">{{$orginal}}</a>
+            </h2>
         @endif
-        <h2>您的短链:
-            <a href="#" target="_blank">
-                @if(isset($result))
+        @if(isset($result))
+            <h2>您的短链:
+                <a href="{{$result}}" target="_blank">
                     {{$result}}
-                @endif
-            </a>
-        </h2>
+                </a>
+            </h2>
+            <img src="http://6du.in/?qr={{$result}}}">
+        @endif
         @if (count($errors) > 0)
             <div class="alert alert-warning alert-dismissable">
                 <ul>
