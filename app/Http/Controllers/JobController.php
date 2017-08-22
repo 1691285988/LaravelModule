@@ -17,4 +17,5 @@ class JobController extends Controller
         $job = (new FileAppendContent('乐视VIP会员.'))->delay(Carbon::now()->addSeconds(15));
         $this->dispatch($job);
     }
+
 }

@@ -103,5 +103,9 @@ Route::post('tinyurls/create', '\App\Http\Controllers\TinyUrlController@create')
 Route::get('jobs/create','\App\Http\Controllers\JobController@create');
 /*************** 队列任务路由模块 *******************/
 
+/*************** 邮箱任务路由模块 *******************/
+Route::get('mail/send','\App\Http\Controllers\MailController@send');
+/*************** 邮箱任务路由模块 *******************/
+
 include_once('admin.php');
 include_once('wechat.php');
