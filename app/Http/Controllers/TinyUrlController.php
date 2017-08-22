@@ -38,7 +38,7 @@ class TinyUrlController extends Controller
         if ($validator->fails()) {
             return back()->withInput()->withErrors($validator);
         } else {
-
+            dd(request('url'));
         }
     }
 }
