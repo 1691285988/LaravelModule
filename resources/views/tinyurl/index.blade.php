@@ -24,11 +24,12 @@
 <div class="container">
     <h1>短链生成器</h1>
     <div class="col-lg-8">
-        <form role="form">
+        <form method="post" action="/tinyurls/create" role="form">
+            {{csrf_field()}}
             <div class="input-group">
-                <input type="text" class="form-control input-lg" placeholder="请输入URL链接">
+                <input name="url" type="url" class="form-control input-lg" placeholder="请输入URL链接">
                 <span class="input-group-btn">
-		        <button class="btn btn-success btn-lg" type="button">生成</button>
+		        <button class="btn btn-success btn-lg" type="submit">生成</button>
 		      </span>
             </div><!-- /input-group -->
         </form>
