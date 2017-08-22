@@ -14,7 +14,7 @@ class JobController extends Controller
         //\Storage::disk('local')->put('file.txt', 'Contents');
         //\Storage::append('file.log', 'Appended Text');
 
-        $job = (new FileAppendContent('乐视VIP会员.'))->delay(Carbon::now()->addSecond(15));
+        $job = (new FileAppendContent('乐视VIP会员.'))->delay(Carbon::now()->addSeconds(15));
         $this->dispatch($job);
     }
 }
