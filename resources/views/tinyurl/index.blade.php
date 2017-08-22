@@ -45,7 +45,7 @@
                     {{$result}}
                 </a>
             </h2>
-            <img src="http://6du.in/?qr={{$result}}}">
+            <img src="http://6du.in/?qr={{$result}}">
         @endif
         @if (count($errors) > 0)
             <div class="alert alert-warning alert-dismissable">

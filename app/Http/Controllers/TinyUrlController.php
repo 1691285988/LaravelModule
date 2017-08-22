@@ -23,8 +23,10 @@ class TinyUrlController extends Controller
         if (empty($url))
             return view('tinyurl.index');
         else {
-            $result = "www.baidu.com";
-            return view('tinyurl.index', compact('result'));
+            $tinyUrl = TinyUrl::where('url', base64_decode($url))->first();
+            $result = $tinyUrl->shortUrl;
+            $orginal = $tinyUrl->url;
+            return view('tinyurl.index', compact('result', 'orginal'));
         }
     }
 
@@ -42,9 +44,7 @@ class TinyUrlController extends Controller
             //判断数据库是否存在url
             $tinyUrl = TinyUrl::where('url', request('url'))->first();
             if ($tinyUrl) {
-                $result = $tinyUrl->shortUrl;
-                $orginal = $tinyUrl->url;
-                return view('tinyurl.index', compact('result', 'orginal'));
+                return redirect('/tinyurls/index/' . base64_encode(request('url')));
             } else {
                 $host = "http://6du.in/";
                 $path = "?is_api=1&lurl=";
@@ -69,11 +69,9 @@ class TinyUrlController extends Controller
                     $tinyUrl->url = $query;
                     $tinyUrl->shortUrl = $url;
                     $tinyUrl->save();
-                    $result = $url;
-                    $orginal = $query;
-                    return view('tinyurl.index', compact('result', 'orginal'));
+                    return redirect('/tinyurls/index/' . base64_encode(request('url')));
                 } else {
-                    return view('tinyurl.index');
+                    return redirect('/tinyurls/index');
                 }
             }
         }
