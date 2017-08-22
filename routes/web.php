@@ -99,5 +99,9 @@ Route::get('tinyurls/index/{url?}', '\App\Http\Controllers\TinyUrlController@ind
 Route::post('tinyurls/create', '\App\Http\Controllers\TinyUrlController@create');
 /*************** 短连接资源路由模块 *******************/
 
+/*************** 队列任务路由模块 *******************/
+Route::get('jobs/create','\App\Http\Controllers\JobController@create');
+/*************** 队列任务路由模块 *******************/
+
 include_once('admin.php');
 include_once('wechat.php');
