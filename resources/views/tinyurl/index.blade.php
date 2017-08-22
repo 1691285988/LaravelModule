@@ -34,6 +34,11 @@
             </div><!-- /input-group -->
         </form>
         <br><br>
+        @if(isset($orginal))
+        <h2>您查询的URL:
+            <a href="#" target="_blank">{{$orginal}}</a>
+        </h2>
+        @endif
         <h2>您的短链:
             <a href="#" target="_blank">
                 @if(isset($result))
