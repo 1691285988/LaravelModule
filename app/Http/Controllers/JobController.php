@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Jobs\FileAppendContent;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class JobController extends Controller
@@ -12,6 +13,8 @@ class JobController extends Controller
     {
         //\Storage::disk('local')->put('file.txt', 'Contents');
         //\Storage::append('file.log', 'Appended Text');
-        $this->dispatch(new FileAppendContent('爱奇艺VIP会员.'));
+
+        $job = (new FileAppendContent('乐视VIP会员.'))->delay(Carbon::now()->addSecond(15));
+        $this->dispatch($job);
     }
 }
