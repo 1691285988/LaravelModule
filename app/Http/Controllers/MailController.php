@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Jobs\SendMail;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class MailController extends Controller
