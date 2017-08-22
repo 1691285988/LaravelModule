@@ -95,7 +95,7 @@ Route::group(['middleware' => 'auth'], function () {
 /*************************** 默认模块,登陆后访问的模块 *****************************/
 
 /*************** 短连接资源路由模块 *******************/
-Route::resource('tinyurls', '\App\Http\Controllers\TinyUrlController');
+Route::get('tinyurls/index/{url?}', '\App\Http\Controllers\TinyUrlController@index');
 /*************** 短连接资源路由模块 *******************/
 
 include_once('admin.php');
