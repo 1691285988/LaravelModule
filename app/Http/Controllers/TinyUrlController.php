@@ -24,6 +24,9 @@ class TinyUrlController extends Controller
             return view('tinyurl.index');
         else {
             $tinyUrl = TinyUrl::where('url', base64_decode($url))->first();
+            if(!$tinyUrl){
+                return view('tinyurl.index');
+            }
             $result = $tinyUrl->shortUrl;
             $orginal = $tinyUrl->url;
             return view('tinyurl.index', compact('result', 'orginal'));
