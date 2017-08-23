@@ -188,6 +188,9 @@ return [
 
         //over-true easywechat
         Overtrue\LaravelWechat\ServiceProvider::class,
+
+        //提供OAuth2.0的社会化登录
+        Laravel\Socialite\SocialiteServiceProvider::class,
     ],
 
     /*
@@ -239,6 +242,8 @@ return [
 
         //添加EasyWechat
         'EasyWeChat' => Overtrue\LaravelWechat\Facade::class,
+        //添加OAuth2.0
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ],
 
 ];
