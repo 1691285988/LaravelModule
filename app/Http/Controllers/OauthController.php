@@ -26,6 +26,6 @@ class OauthController extends Controller
     {
         $user = Socialite::driver('github')->user();
 
-        \Log::info('GitHub三方登录', $user);
+        \Log::info('GitHub三方登录', compact('user') );
     }
 }
