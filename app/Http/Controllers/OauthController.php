@@ -14,8 +14,7 @@ class OauthController extends Controller
      */
     public function redirectToProvider()
     {
-        //return Socialite::driver('github')->redirect();
-        return Socialite::driver('github')->stateless()->redirect();
+        return Socialite::driver('github')->redirect();
     }
 
     /**
@@ -25,8 +24,12 @@ class OauthController extends Controller
      */
     public function handleProviderCallback()
     {
+//        $user = Socialite::driver('github')->stateless();
+//
+//        \Log::info('GitHub三方登录', compact('user') );
+
         $user = Socialite::driver('github')->stateless();
 
-        \Log::info('GitHub三方登录', compact('user') );
+        dd($user);
     }
 }
