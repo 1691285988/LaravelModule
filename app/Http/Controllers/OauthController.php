@@ -14,7 +14,8 @@ class OauthController extends Controller
      */
     public function redirectToProvider()
     {
-        return Socialite::driver('github')->redirect();
+        //return Socialite::driver('github')->redirect();
+        return Socialite::driver('google')->stateless()->redirect();
     }
 
     /**
