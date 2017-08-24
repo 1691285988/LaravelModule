@@ -24,7 +24,7 @@ class OauthController extends Controller
      */
     public function handleProviderCallback()
     {
-        $user = Socialite::driver('github')->user();
+        $user = Socialite::driver('github')->stateless()->user();
 
         \Log::info('GitHub三方登录', compact('user') );
     }
