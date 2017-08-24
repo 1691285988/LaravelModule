@@ -34,9 +34,16 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+    //Github第三方登录
     'github' => [
         'client_id' => env('GITHUB_APP_ID'),
         'client_secret' => env('GITHUB_APP_SECRET'),
         'redirect' => env('GITHUB_CALLBACK_URL'),
+    ],
+    //QQ互联第三方登录
+    'qq' => [
+        'client_id' => env('QQ_APP_ID'),
+        'client_secret' => env('QQ_APP_SECRET'),
+        'redirect' => env('QQ_CALLBACK_URL'),
     ],
 ];

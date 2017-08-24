@@ -107,10 +107,12 @@ Route::get('jobs/create','\App\Http\Controllers\JobController@create');
 Route::get('mail/send','\App\Http\Controllers\MailController@send');
 /*************** 邮箱任务路由模块 *******************/
 
-/*************** 邮箱任务路由模块 *******************/
+/*************** 三方授权路由模块 *******************/
 Route::get('oauth/github','\App\Http\Controllers\OauthController@redirectToProvider');
 Route::get('oauth/github/callback','\App\Http\Controllers\OauthController@handleProviderCallback');
-/*************** 邮箱任务路由模块 *******************/
+Route::get('oauth/qq','\App\Http\Controllers\OauthController@redirectToProvider_qq');
+Route::get('oauth/qq/callback','\App\Http\Controllers\OauthController@handleProviderCallback_qq');
+/*************** 三方授权路由模块 *******************/
 
 include_once('admin.php');
 include_once('wechat.php');

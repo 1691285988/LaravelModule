@@ -30,4 +30,28 @@ class OauthController extends Controller
 
         dd($user);
     }
+
+    /**
+     * Redirect the user to the GitHub authentication page.
+     *
+     * @return Response
+     */
+    public function redirectToProvider_qq()
+    {
+        return Socialite::driver('qq')->redirect();
+    }
+
+    /**
+     * Obtain the user information from GitHub.
+     *
+     * @return Response
+     */
+    public function handleProviderCallback_qq()
+    {
+        $user = Socialite::driver('qq')->user();
+
+        \Log::info('QQ三方登录', compact('user') );
+
+        dd($user);
+    }
 }
