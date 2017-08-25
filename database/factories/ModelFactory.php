@@ -42,3 +42,12 @@ $factory->define(App\AdminUser::class, function (Faker\Generator $faker) {
         'password' => $password ?: $password = bcrypt('secret'),
     ];
 });
+
+//创建而是API查询需要使用的方法
+$factory->define(App\Lesson::class, function (Faker\Generator $faker) {
+    return [
+        'title' => $faker->name,
+        'body' => $faker->sentences(10),
+        'free' => $faker->boolean()
+    ];
+});
