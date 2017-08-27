@@ -193,6 +193,10 @@ return [
         //Laravel\Socialite\SocialiteServiceProvider::class,
         //安正超 oauth2.0
         Overtrue\LaravelSocialite\ServiceProvider::class,
+
+        //添加Dingo/API和JWT-Auth的服务提供者
+        Dingo\Api\Provider\LaravelServiceProvider::class,
+        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class
     ],
 
     /*
@@ -248,6 +252,10 @@ return [
         //'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         //安正超的oauth2.0
         'Socialite' => Overtrue\LaravelSocialite\Socialite::class,
+
+        //使用JWT开发接口
+        'JWTAuth' => 'Tymon\JWTAuth\Facades\JWTAuth',
+        'JWTFactory' => 'Tymon\JWTAuth\Facades\JWTFactory'
     ],
 
 ];
