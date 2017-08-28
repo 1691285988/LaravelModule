@@ -77,11 +77,11 @@
         </div>
     @endif
 
-    <div>
-        <a href="<?php echo app('Dingo\Api\Routing\UrlGenerator')->version('v1')->route('users.index', ['id' => 12]);?>">API版本一</a>
-        <br/>
-        <a href="<?php echo app('Dingo\Api\Routing\UrlGenerator')->version('v2')->route('users.index', ['id' => 14]);?>">API版本二</a>
-    </div>
+    {{--<div>--}}
+        {{--<a href="< ? p hp echo app('Dingo\Api\Routing\UrlGenerator')->version('v1')->route('users.index', ['id' => 12]);? > " >API版本一</a>--}}
+        {{--<br/>--}}
+        {{--<a href="< ? p hp echo app('Dingo\Api\Routing\UrlGenerator')->version('v2')->route('users.index', ['id' => 14]);? >" >API版本二</a>--}}
+    {{--</div>--}}
 
     <div class="content">
         <div class="title m-b-md">
