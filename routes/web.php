@@ -114,5 +114,9 @@ Route::get('oauth/qq','\App\Http\Controllers\OauthController@redirectToProvider_
 Route::get('oauth/qq/callback','\App\Http\Controllers\OauthController@handleProviderCallback_qq');
 /*************** 三方授权路由模块 *******************/
 
+/*************** Redis使用路由模块 *******************/
+Route::get('redis/index','\App\Http\Controllers\RedisController@index');
+/*************** Redis使用路由模块 *******************/
+
 include_once('admin.php');
 include_once('wechat.php');
