@@ -11,7 +11,29 @@ class RedisController extends Controller
      */
     public function index()
     {
-        Redis::set('name', 'Taylor');
-        return '123';
+        //Redis::set('name', 'Taylor');
+
+//        Redis::pipeline(function ($pipe) {
+//            for ($i = 0; $i < 1000; $i++) {
+//                $pipe->set("key:$i", $i);
+//            }
+//        });
+
+
+        $redis = Redis::connection();
+//        $redis->pipeline(function ($pipe) {
+//            for ($i = 0; $i < 1000; $i++) {
+//                $pipe->set("value:$i", $i);
+//            }
+//        });
+
+        $redis->select(4);
+        $redis->pipeline(function ($pipe) {
+            for ($i = 0; $i < 1000; $i++) {
+                $pipe->set("value:$i", $i);
+            }
+        });
+
+//        return $redis->info();
     }
 }
