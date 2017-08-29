@@ -116,6 +116,7 @@ Route::get('oauth/qq/callback','\App\Http\Controllers\OauthController@handleProv
 
 /*************** Redis使用路由模块 *******************/
 Route::get('redis/index','\App\Http\Controllers\RedisController@index');
+Route::get('redis/publish','\App\Http\Controllers\RedisController@publish');
 /*************** Redis使用路由模块 *******************/
 
 include_once('admin.php');

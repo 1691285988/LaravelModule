@@ -36,4 +36,12 @@ class RedisController extends Controller
 
 //        return $redis->info();
     }
+
+    /**
+     * 发送消息
+     */
+    public function publish()
+    {
+        Redis::publish('test-channel', json_encode(['foo' => 'bar']));
+    }
 }
