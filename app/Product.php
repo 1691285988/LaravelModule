@@ -2,19 +2,20 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
 class Product extends Model
 {
-    protected $name;
+    public $name;
+    public $price;
 
     /**
      * ProductTest constructor.
      * @param $name
      */
-    public function __construct($name)
+    public function __construct($name, $price)
     {
         $this->name = $name;
+        $this->price = $price;
     }
+
 
 }
