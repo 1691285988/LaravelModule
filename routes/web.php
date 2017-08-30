@@ -100,24 +100,28 @@ Route::post('tinyurls/create', '\App\Http\Controllers\TinyUrlController@create')
 /*************** 短连接资源路由模块 *******************/
 
 /*************** 队列任务路由模块 *******************/
-Route::get('jobs/create','\App\Http\Controllers\JobController@create');
+Route::get('jobs/create', '\App\Http\Controllers\JobController@create');
 /*************** 队列任务路由模块 *******************/
 
 /*************** 邮箱任务路由模块 *******************/
-Route::get('mail/send','\App\Http\Controllers\MailController@send');
+Route::get('mail/send', '\App\Http\Controllers\MailController@send');
 /*************** 邮箱任务路由模块 *******************/
 
 /*************** 三方授权路由模块 *******************/
-Route::get('oauth/github','\App\Http\Controllers\OauthController@redirectToProvider');
-Route::get('oauth/github/callback','\App\Http\Controllers\OauthController@handleProviderCallback');
-Route::get('oauth/qq','\App\Http\Controllers\OauthController@redirectToProvider_qq');
-Route::get('oauth/qq/callback','\App\Http\Controllers\OauthController@handleProviderCallback_qq');
+Route::get('oauth/github', '\App\Http\Controllers\OauthController@redirectToProvider');
+Route::get('oauth/github/callback', '\App\Http\Controllers\OauthController@handleProviderCallback');
+Route::get('oauth/qq', '\App\Http\Controllers\OauthController@redirectToProvider_qq');
+Route::get('oauth/qq/callback', '\App\Http\Controllers\OauthController@handleProviderCallback_qq');
 /*************** 三方授权路由模块 *******************/
 
 /*************** Redis使用路由模块 *******************/
-Route::get('redis/index','\App\Http\Controllers\RedisController@index');
-Route::get('redis/publish','\App\Http\Controllers\RedisController@publish');
+Route::get('redis/index', '\App\Http\Controllers\RedisController@index');
+Route::get('redis/publish', '\App\Http\Controllers\RedisController@publish');
 /*************** Redis使用路由模块 *******************/
+
+/*****************数据库事务测试*****************************/
+Route::resource('articles', '\App\Http\Controllers\ArticleController');
+/*****************数据库事务测试*****************************/
 
 include_once('admin.php');
 include_once('wechat.php');
