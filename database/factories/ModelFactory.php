@@ -51,3 +51,10 @@ $factory->define(App\Lesson::class, function (Faker\Generator $faker) {
         'free' => $faker->boolean()
     ];
 });
+
+//创建单元测试用的工厂添加方法
+$factory->define(App\Article::class, function (Faker\Generator $faker) {
+    return [
+        'title'=> $faker->sentence
+    ];
+});
