@@ -127,5 +127,10 @@ Route::resource('articles', '\App\Http\Controllers\ArticleController');
 Route::get('events', '\App\Http\Controllers\EventController@index');
 /*****************事件测试*****************************/
 
+//用于使用自定义中间件的内容
+//Route::group(['prefix'=>'admin','middleware'=>'admin'],function (){
+//    Route::get('/users','\App\Http\Controolers\...');
+//});
+
 include_once('admin.php');
 include_once('wechat.php');

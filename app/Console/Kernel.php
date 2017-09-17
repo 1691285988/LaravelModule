@@ -14,7 +14,8 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         \App\Console\Commands\ESInit::class,
-        \App\Console\Commands\RedisSubscribe::class
+        \App\Console\Commands\RedisSubscribe::class,
+        \App\Console\Commands\LogInfo::class
     ];
 
     /**
@@ -27,6 +28,8 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+
+         $schedule->command('lesson:log')->everyMinute();
     }
 
     /**
