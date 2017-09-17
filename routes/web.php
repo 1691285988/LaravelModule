@@ -123,5 +123,9 @@ Route::get('redis/publish', '\App\Http\Controllers\RedisController@publish');
 Route::resource('articles', '\App\Http\Controllers\ArticleController');
 /*****************数据库事务测试*****************************/
 
+/*****************事件测试*****************************/
+Route::get('events', '\App\Http\Controllers\EventController@index');
+/*****************事件测试*****************************/
+
 include_once('admin.php');
 include_once('wechat.php');
